@@ -1,6 +1,6 @@
 
 /* Global Variables */
-const apiKey='&appid=0463aac12728657ef94575df02be8116';
+const apiKey='&appid=0463aac12728657ef94575df02be8116&units=metric';
 const apiUrl='http://api.openweathermap.org/data/2.5/forecast?zip='
 
 // adding Eventlistner 
@@ -49,9 +49,11 @@ async function postData(url = '', data = {}) {
    console.log(url);
     const response=await fetch(url) ;
     try {
+       
         const allData=await response.json();
+
         document.getElementById('date').innerHTML=`Date: ${allData[0].date}`;
-        document.getElementById('temp').innerHTML=`Temp: ${allData[0].temp}`;
+        document.getElementById('temp').innerHTML=`Temp: ${allData[0].temp} C`;
         document.getElementById('content').innerHTML=`content: ${allData[0].content}`
 
     }
