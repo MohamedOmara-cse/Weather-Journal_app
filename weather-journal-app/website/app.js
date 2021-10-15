@@ -52,9 +52,9 @@ async function postData(url = '', data = {}) {
        
         const allData=await response.json();
 
-        document.getElementById('date').innerHTML=`Date: ${allData[0].date}`;
-        document.getElementById('temp').innerHTML=`Temp: ${allData[0].temp} C`;
-        document.getElementById('content').innerHTML=`content: ${allData[0].content}`
+        document.getElementById('date').innerHTML=`Date: ${allData.date}`;
+        document.getElementById('temp').innerHTML=`Temp: ${allData.temp} C`;
+        document.getElementById('content').innerHTML=`content: ${allData.content}`
 
     }
     catch(error)
