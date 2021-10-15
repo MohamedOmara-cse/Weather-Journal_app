@@ -43,23 +43,21 @@ async function postData(url = '', data = {}) {
     catch(error)
     {console.log('error',error)}// parses JSON response into native JavaScript objects
   }
-  
 
-  const updateDataUI =async (url='')=>{
-   console.log(url);
-    const response=await fetch(url) ;
-    try {
-       
-        const allData=await response.json();
 
-        document.getElementById('date').innerHTML=`Date: ${allData.date}`;
-        document.getElementById('temp').innerHTML=`Temp: ${allData.temp} C`;
-        document.getElementById('content').innerHTML=`content: ${allData.content}`
+const updateUI = async()=>{
+const request = await fetch('/all')
+try{
+const allData = await request.json();
+console.log(allData)
+document.getElementById('date').innerHTML = Date:${allData.date};
+document.getElementById('temp').innerHTML = Temperature:${allData.temp};
+document.getElementById('content').innerHTML = I feel:${allData.content};
+}catch(err){
+console.log('error',err);
+}
+}
 
-    }
-    catch(error)
-    {console.log('error',error)}
-};
 const getApiData =async (url='')=>{
    
     const response=await fetch(url) ;
